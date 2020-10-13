@@ -3,7 +3,7 @@
 </head>
 <body>
 	<p align="center">
-  <img src="logo.svg" width="150" title="Go Barber">
+  <img src="logogobarber.svg" width="150" title="Go Barber">
 </p>
 <div>
   
