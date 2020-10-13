@@ -1,104 +1,61 @@
-# Recuperação de senha
+<head>
+	<h1>  GoStack - GoBarber API</h1>
+</head>
+<body>
+	<p align="center">
+  <img src="logogobarber.svg" width="150" title="Go Barber">
+</p>
+<div>
+  
+  ##  Description:  
+   - This project is a barber shop system where services are scheduled, customers and service providers login and listings, notifications are also displayed and email is sent.
+   
+  ##  Running:  
+   - Clone code - "git clone url_repository" .
+   - Running "yarn" in path .
+   - Create instances docker: 
+        - `Postgres:` docker run --name INSTANCE_NAME -e POSTGRES_PASSWORD=PASS -p 5432:5432 -d postgres:11
+        - `MongoDB:` docker run --name INSTANCE_NAME -p 27017:27017 -d -t mongo
+        - `Redis:` docker run --name INSTANCE_NAME -p 6379:6379 -d -t redis:alpine
+   - For better structuring of the code used, Eslint, Editor config and Prittier, installation of plugins in Vscode.
+   
+   - Create an .env file from .envexample
+  
+   ##  Technologies Used:
+   - Express  
+   - NodeMailer
+   - AWS API
+   - Multer
+   - JWT
+   - DotEnv
+   - Bcrypt
+   - Mongoose
+   - TypeORM
+   - Database: 
+        - `Postgres` - Structured Data
+        - `MongoDB`  - Unstructured data / notification control
+        - `Redis`    - Queue control for sending email
+   - Developer:
+        - `Eslint`
+        - `Prittier`
+        - `Editor Config`
+   
+     
+  
+  ## Features:
+  - Login/Create/Update User using JWT
+  - Create/Liste/Delete Appointments
+  - List/Update Notifications
+  - Send Email Notifications
+  - List Schedule provider
+  - List Available hours
+  - List Provider
+  - Upload Avatar Image
+   
+</div>
 
-**RF**
+</body>
 
-- O usuário deve poder recuperar sua senha informando o seu e-mail;
-- O usuário deve receber um e-mail com instruções de recuperação de senha;
-- O usuário deve poder resetar sua senha;
-
-**RNF**
-
-- Utilizar Mailtrap para testar envios em ambientes de desenvolvimento
-- Utilizando Amazon SES para envios em produção;
-- O envio de e-mails deve acontecer em segundo plano (background job);
-
-
-**RN**
-
-- O link enviado por email para resetar senha, deve expirar em 2h;
-- O usuário precisa confirmar a nova senha ao resetar a sua senha;
-
-# Atualização do perfil
-
-**RF**
-
-- O usuário deve poder atualizar o seu nome, email e senha;
-
-**RN**
-
-- O usuário não pode alterar seu email para um email já utilizado;
-- Para atualizar sua senha, o usuário deve informar a senha antiga;
-- Para atualizar sua senha, o usuário precisa confirmar a nova senha;
-
-# Painel do prestador
-
-**RF**
-
-- O usuário deve poder listar seus agendamentos de um dia específico;
-- O prestador deve receber uma notificação sempre que houver um novo agendamento;
-- O prestador deve poder visualizar as notificações não lidas;
-
-
-**RNF**
-
-- Os agendamentos do prestador no dia devem ser armazenados em cache;
-- As notificações do prestador devem ser armazenadas no MongoDB;
-- As notificações do prestador devem ser enviadas em tempo-real utilizando Socket.io;
-
-**RN**
-
-- A notificação deve ter um status de lida ou não-lida para que o prestador possa controlar;
-
-# Agendamento de serviçoes
-
-**RF**
-
-- O usuário deve poder listar todos os prestadores de serviço cadastrados;
-- O usuário deve poder listar os dias de um mês com pelo menos um horário disponivel;
-- O usuário deve poder listar horários disponíveis em um dia especifico de um prestador;
-- O usuário deve poder realizar um novo agendamento com um prestador;
-
-**RNF**
-
-- A listagem de prestadores deve ser armazenada em cache;
-
-**RN**
-
-- Cada agendamento deve durar 1h exatamente;
-- Os agendamentos devem estar disponíveis entre 8h às 18h (Primeiro às 8h, último às 17);
-- O usuário não pode agendar em um horário já ocupado;
-- O usuário não pode agendar em um horário que já passou;
-- O usuário não pode agendar serviços consigo mesmo;
-
-
-# Testes automatizados
-
-Que a nossa aplicação continue funcionando independente do número de novas funcionalidades e do número de devs no time
-
-1. Testes unitários
-
-Testam funcionalidades especificas da nossa aplicação (precisam ser funções puras).
-
-JAMAIS: Chamada à uma API, efeito colateral (Não depende de serviçoes externos).
-
-2. Testes de integração
-
-Testam uma funcionalidade completa, passando por várias camadas da aplicação.
-
-Route -> Controller -> Serviço -> Repositório -> ...(testa várias camadas..vários arquivos..)
-
-3. Testes E2E
-
-Testes que simulam a ação do usuário dentro da nossa aplicação.
-
-Simula usuário atuando na nossa aplicação (usado nas interfaces)
-
-1. Clique no input de email
-2. Preencha mario@gmail.com
-3. Clique no input de senha
-4. preencha 123456
-5. Clique no botão "logar"
-6. espero que a página tenha enviado o usuário para o dashboard
-
-# TDD (Test Driven Development)
-  - Quando ele se cadastrar na aplicação, ele deve receber um email de boas-vindas;
+<footer>
+  <p>Mário Wessen - <a href="mailto:mariowessen@gmail.com">mariowessen@gmail.com</a></p>
+</footer>
